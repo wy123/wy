@@ -24,6 +24,7 @@ Stack trace:
 #21 F:\WWW\www\framework\base\CApplication.php(184): CWebApplication->processRequest()
 #22 F:\WWW\www\demos\blog\index.php(11): CWebApplication->run()
 REQUEST_URI=/WWW/demos/blog/
+<<<<<<< HEAD
 2015/10/08 17:49:13 [error] [system.db.CDbCommand] Error in preparing SQL: PRAGMA table_info('tbl_post')
 2015/10/08 17:49:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 26 file is encrypted or is not a database. The SQL statement executed was: PRAGMA table_info('tbl_post').
 2015/10/08 17:49:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 26 file is encrypted or is not a database' in F:\WWW\wy\framework\db\CDbCommand.php:543
@@ -55,3 +56,5 @@ Stack trace:
 REQUEST_URI=/wy/demos/blog/index.php/post/2/A+Test+Post
 HTTP_REFERER=http://127.0.0.1/wy/demos/blog/index.php/post/2/A+Test+Post
 ---
+=======
+>>>>>>> branch 'master' of https://github.com/wy123/wy.git
