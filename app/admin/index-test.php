@@ -13,4 +13,4 @@ $config=dirname(__FILE__).'/protected/config/test.php';
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
-//1221
+//12218
