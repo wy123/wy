@@ -57,11 +57,11 @@ class SiteController extends Controller {
 		//$admin -> save ();
 		//die ;
 
-		$admin = LoginForm::model() -> findAll(array('select' => 'username'),'id in (5,6)');
+		//$admin = LoginForm::model() -> findAll(array('select' => 'username'),'id in (5,6)');
 		//echo $admin[0]['username'];
-		print_r($admin);
+		//print_r($admin);
 
-		die ;
+		//die ;
 
 		// if it is ajax validation request
 		if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
@@ -78,6 +78,9 @@ class SiteController extends Controller {
 		}
 		// display the login form
 		$this -> render('login', array('model' => $model));
+		
+		//$this->render('login',array('admin'=>$admin));
+		
 	}
 
 	/**
