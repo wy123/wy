@@ -56,6 +56,10 @@ class SiteController extends Controller {
 		//$admin -> username = '16346555454';
 		//$admin -> save ();
 		//die ;.
+		$criteria=new CDbCriteria;
+		$criteria->select = 'username';
+		$criteria->join = 'LEFT JOIN outsource ON outsource.id=t.outsource_id';
+		$criteria->condition = 'id in (5,6)';
 		$s['select'] = 'username';
 		$s['join'] = 'LEFT JOIN outsource ON outsource.id=t.outsource_id';
 		$s['condition'] = 'id in (5,6)';
