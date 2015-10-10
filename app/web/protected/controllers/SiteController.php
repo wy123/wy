@@ -48,24 +48,25 @@ class SiteController extends Controller {
 	 * Displays the login page
 	 */
 	public function actionLogin() {
-		//$admin = new LoginForm;
-		//$admin = LoginForm::model() -> deleteAll('id in(2,3)');
-		//echo $admin[0]['username'];
-		//
-		//$admin -> id = '4';
-		//$admin -> username = '16346555454';
-		//$admin -> save ();
-		//die ;.
-		$criteria=new CDbCriteria;
-		$criteria->select = 'username';
-		$criteria->join = 'LEFT JOIN outsource ON outsource.id=t.outsource_id';
-		$criteria->condition = 'id in (5,6)';
+		$admin = new LoginForm;
+		$admin = LoginForm::model() -> deleteAll('id in(2,3)');
+		
+		$admin = LoginForm::model() -> findByPk(5);
+		$admin -> id = '4';
+		$admin -> username = '16346555454';
+		$admin -> save();
+		
+		$criteria = new CDbCriteria;
+		$criteria -> select = 'username';
+		$criteria -> join = 'LEFT JOIN outsource ON outsource.id=t.outsource_id';
+		$criteria -> condition = 'id in (5,6)';
+		
 		$s['select'] = 'username';
 		$s['join'] = 'LEFT JOIN outsource ON outsource.id=t.outsource_id';
 		$s['condition'] = 'id in (5,6)';
-		$admin = LoginForm::model() -> findAll(array('select' => 'username','condition'=>'id in (5,6)'));
-		//$admin = yii::app()->db->createCommand()->select('*')->from('tbl_admin a')->join('tbl_user b','a.id = b.ids')->where('id=5')-> queryAll();
-		//echo $admin[0]['username'];
+		$admin = LoginForm::model() -> findAll(array('select' => 'username', 'condition' => 'id in (5,6)'));
+		
+		$admin = yii::app() -> db -> createCommand() -> select('*') -> from('tbl_admin a') -> join('tbl_user b', 'a.id = b.ids') -> where('id=5') -> queryAll();
 		print_r($admin);
 
 		die ;
