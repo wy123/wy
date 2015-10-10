@@ -55,6 +55,7 @@ class SiteController extends Controller {
 		$admin -> id = '4';
 		$admin -> username = '16346555454';
 		$admin -> save();
+		$admin -> update();
 		
 		$criteria = new CDbCriteria;
 		$criteria -> select = 'username';
