@@ -116,6 +116,9 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
+		
+		echo 1111111111;
+		die;
 		$criteria=new CDbCriteria(array(
 			'condition'=>'status='.Post::STATUS_PUBLISHED,
 			'order'=>'update_time DESC',
