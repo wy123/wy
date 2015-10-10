@@ -56,8 +56,11 @@ class SiteController extends Controller {
 		//$admin -> username = '16346555454';
 		//$admin -> save ();
 		//die ;.
-		//$admin = LoginForm::model() -> findAll(array('select' => 'username'), 'id in (5,6)');
-		$admin = yii::app()->db->createCommand()->select('*')->from('tbl_admin a')->join('tbl_user b','a.id = b.ids')->where('id=5')-> queryAll();
+		$s['select'] = 'username';
+		$s['join'] = 'LEFT JOIN outsource ON outsource.id=t.outsource_id';
+		$s['condition'] = 'id in (5,6)';
+		$admin = LoginForm::model() -> findAll(array('select' => 'username','condition'=>'id in (5,6)'));
+		//$admin = yii::app()->db->createCommand()->select('*')->from('tbl_admin a')->join('tbl_user b','a.id = b.ids')->where('id=5')-> queryAll();
 		//echo $admin[0]['username'];
 		print_r($admin);
 
